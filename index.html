@@ -151,46 +151,6 @@
             padding: 8px 12px;
             border-radius: 8px;
         }
-
-        .project-card {
-            background: var(--card-bg);
-            padding: 16px;
-            border-radius: 8px;
-            margin-bottom: 16px;
-        }
-
-        .project-card h3 {
-            margin-top: 0;
-        }
-
-        .links {
-            margin-top: 8px;
-            display: flex;
-            gap: 12px;
-        }
-
-        .links a {
-            border: 1px solid var(--accent);
-            padding: 6px 12px;
-            border-radius: 20px;
-            transition: 0.3s;
-        }
-
-        .links a:hover {
-            background: var(--accent);
-            color: var(--bg-color);
-        }
-
-        .contact p {
-            margin-bottom: 12px;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 16px;
-            background: var(--card-bg);
-            font-size: 14px;
-        }
     </style>
 </head>
 
@@ -241,12 +201,14 @@
         </ul>
     </section>
 
-    <section id="projects" class="projects">
+        <section id="projects" class="projects">
         <h2 id="projects-title">Projetos</h2>
 
         <div class="project-card">
             <h3>Hair Salon Reservation App</h3>
-            <p id="proj1-desc">App de agendamento para salão de beleza com Firebase e Kotlin.</p>
+            <p id="proj1-desc">
+                App de agendamento para salão de beleza com Firebase e Kotlin.
+            </p>
             <div class="links">
                 <a href="#">GitHub</a>
                 <a href="#">Demo</a>
@@ -255,7 +217,9 @@
 
         <div class="project-card">
             <h3>K-Dari</h3>
-            <p id="proj2-desc">App Android para aprender coreano com TTS e reconhecimento de voz.</p>
+            <p id="proj2-desc">
+                App Android para aprender coreano com TTS e reconhecimento de voz.
+            </p>
             <div class="links">
                 <a href="#">GitHub</a>
                 <a href="#">Demo</a>
@@ -264,7 +228,20 @@
 
         <div class="project-card">
             <h3>Auto Trading Bot</h3>
-            <p id="proj3-desc">Bot de trading automatizado usando API da Binance.</p>
+            <p id="proj3-desc">
+                Bot de trading automatizado usando API da Binance.
+            </p>
+            <div class="links">
+                <a href="#">GitHub</a>
+                <a href="#">Demo</a>
+            </div>
+        </div>
+
+                <div class="project-card">
+            <h3>Seoul Chicken Kitchen Automation</h3>
+            <p id="proj4-desc">
+                Sistema de automação de pedidos e cozinha para restaurante Seoul Chicken.
+            </p>
             <div class="links">
                 <a href="#">GitHub</a>
                 <a href="#">Demo</a>
@@ -272,10 +249,9 @@
         </div>
 
         <div class="project-card">
-            <h3>Seoul Chicken Kitchen Automation</h3>
-            <p id="proj4-desc">
-                Sistema de automação de pedidos e cozinha para restaurante Seoul Chicken.  
-                서울치킨 메뉴 및 주방 자동화 시스템. 웹 기반 주문, 주방 디스플레이 및 재고 연동 포함.
+            <h3>Logcomex Dashboard</h3>
+            <p id="proj5-desc">
+                Projeto premiado no KOTRA. Dashboard para análise dos dados de importação acumulada do Brasil baseado no código NCM.
             </p>
             <div class="links">
                 <a href="#">GitHub</a>
@@ -284,9 +260,11 @@
         </div>
     </section>
 
-    <section id="contact" class="contact">
+        <section id="contact" class="contact">
         <h2 id="contact-title">Contato</h2>
-        <p id="contact-desc">Vamos nos conectar!</p>
+        <p id="contact-desc">
+            Ofereço soluções otimizadas para diversos tipos de projetos. Fique à vontade para entrar em contato sempre que precisar!
+        </p>
         <div class="social">
             <a href="https://github.com/haseungsong" target="_blank">GitHub</a>
             <a href="mailto:haseungbr@gmail.com">Email</a>
@@ -328,10 +306,11 @@
                 document.getElementById('proj1-desc').textContent = 'Firebase와 Kotlin으로 만든 미용실 예약 앱.';
                 document.getElementById('proj2-desc').textContent = 'TTS와 음성 인식이 포함된 한국어 학습 앱.';
                 document.getElementById('proj3-desc').textContent = 'Binance API를 이용한 자동 매매 봇.';
-                document.getElementById('proj4-desc').textContent = '서울치킨 메뉴 및 주방 자동화 시스템. 웹 기반 주문, 주방 디스플레이 및 재고 연동 포함.';
+                document.getElementById('proj4-desc').textContent = '서울치킨 메뉴 및 주방 자동화 시스템.';
+                document.getElementById('proj5-desc').textContent = 'KOTRA 대상 수상 프로젝트. 브라질 수입 데이터를 NCM 코드 기준으로 한 페이지에서 체계적으로 분석 가능.';
 
                 document.getElementById('contact-title').textContent = '연락처';
-                document.getElementById('contact-desc').textContent = '연락 주세요!';
+                document.getElementById('contact-desc').textContent = '다양한 프로젝트에 대한 최적화 솔루션을 제공합니다. 언제든지 편하게 연락 주세요!';
                 currentLang = 'kr';
             } else {
                 document.querySelector('.menu-home').textContent = 'Início';
@@ -354,9 +333,10 @@
                 document.getElementById('proj2-desc').textContent = 'App Android para aprender coreano com TTS e reconhecimento de voz.';
                 document.getElementById('proj3-desc').textContent = 'Bot de trading automatizado usando API da Binance.';
                 document.getElementById('proj4-desc').textContent = 'Sistema de automação de pedidos e cozinha para restaurante Seoul Chicken.';
+                document.getElementById('proj5-desc').textContent = 'Projeto premiado no KOTRA. Dashboard para análise dos dados de importação acumulada do Brasil baseado no código NCM.';
 
                 document.getElementById('contact-title').textContent = 'Contato';
-                document.getElementById('contact-desc').textContent = 'Vamos nos conectar!';
+                document.getElementById('contact-desc').textContent = 'Ofereço soluções otimizadas para diversos tipos de projetos. Fique à vontade para entrar em contato sempre que precisar!';
                 currentLang = 'pt';
             }
         });
