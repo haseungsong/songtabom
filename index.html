@@ -61,13 +61,16 @@
 
         .nav {
             display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
+            gap: clamp(8px, 2vw, 16px);
+            flex-wrap: nowrap;
             justify-content: center;
             align-items: center;
+            flex: 1;
+            overflow-x: auto;
         }
 
         .nav a {
+            white-space: nowrap;
             padding: 6px 10px;
             border-radius: 8px;
             transition: 0.3s;
@@ -78,12 +81,7 @@
             color: var(--bg-color);
         }
 
-        .lang-toggle {
-            cursor: pointer;
-            font-size: 20px;
-        }
-
-        .theme-toggle {
+        .lang-toggle, .theme-toggle {
             cursor: pointer;
             font-size: 20px;
         }
@@ -216,14 +214,14 @@
         <p id="hero-sub">Desenvolvedor de aplicativos, sites, automação e análise de dados para soluções eficientes.</p>
         <p class="roles">App Developer | Web Developer | RPA | Data Analysis</p>
         <div class="social">
-            <a href="#" target="https://github.com/haseungsong">GitHub</a>
+            <a href="https://github.com/haseungsong" target="_blank">GitHub</a>
             <a href="mailto:haseungbr@gmail.com">Email</a>
         </div>
     </section>
 
     <section id="about" class="about">
         <h2 id="about-title">Sobre</h2>
-        <p id="about-desc">Sou um desenvolvedor apaixonado por aplicativos, sites e automação de dados.</p>
+        <p id="about-desc">Sou um desenvolvedor apaixonado por aplicativos, sites, automação e análise de dados.</p>
 
         <h3 id="skills-title">Habilidades</h3>
         <ul class="skills">
@@ -272,15 +270,26 @@
                 <a href="#">Demo</a>
             </div>
         </div>
+
+        <div class="project-card">
+            <h3>Seoul Chicken Kitchen Automation</h3>
+            <p id="proj4-desc">
+                Sistema de automação de pedidos e cozinha para restaurante Seoul Chicken.  
+                서울치킨 메뉴 및 주방 자동화 시스템. 웹 기반 주문, 주방 디스플레이 및 재고 연동 포함.
+            </p>
+            <div class="links">
+                <a href="#">GitHub</a>
+                <a href="#">Demo</a>
+            </div>
+        </div>
     </section>
 
     <section id="contact" class="contact">
         <h2 id="contact-title">Contato</h2>
         <p id="contact-desc">Vamos nos conectar!</p>
         <div class="social">
-            <a href="#" target="_blank">GitHub</a>
-            <a href="#" target="_blank">LinkedIn</a>
-            <a href="mailto:your.email@example.com">Email</a>
+            <a href="https://github.com/haseungsong" target="_blank">GitHub</a>
+            <a href="mailto:haseungbr@gmail.com">Email</a>
         </div>
     </section>
 
@@ -307,10 +316,10 @@
                 langToggle.textContent = '🇧🇷';
 
                 document.getElementById('hero-title').textContent = '안녕하세요, Alex (Haseung Song)입니다.';
-                document.getElementById('hero-sub').textContent = '앱과 웹을 만드는 개발자입니다.';
+                document.getElementById('hero-sub').textContent = '앱, 웹, 자동화 및 데이터 분석을 개발하는 개발자입니다.';
 
                 document.getElementById('about-title').textContent = '소개';
-                document.getElementById('about-desc').textContent = '저는 앱 개발, 웹사이트 개발, 데이터 자동화 및 최적화에 경험을을 가진 개발자입니다.';
+                document.getElementById('about-desc').textContent = '저는 앱, 웹사이트, 자동화 및 데이터 분석을 통해 효율적인 솔루션을 개발합니다.';
 
                 document.getElementById('skills-title').textContent = '기술';
                 document.getElementById('exp-title').textContent = '경력';
@@ -319,6 +328,7 @@
                 document.getElementById('proj1-desc').textContent = 'Firebase와 Kotlin으로 만든 미용실 예약 앱.';
                 document.getElementById('proj2-desc').textContent = 'TTS와 음성 인식이 포함된 한국어 학습 앱.';
                 document.getElementById('proj3-desc').textContent = 'Binance API를 이용한 자동 매매 봇.';
+                document.getElementById('proj4-desc').textContent = '서울치킨 메뉴 및 주방 자동화 시스템. 웹 기반 주문, 주방 디스플레이 및 재고 연동 포함.';
 
                 document.getElementById('contact-title').textContent = '연락처';
                 document.getElementById('contact-desc').textContent = '연락 주세요!';
@@ -331,10 +341,10 @@
                 langToggle.textContent = '🇰🇷';
 
                 document.getElementById('hero-title').textContent = 'Olá, sou Alex (Haseung Song)';
-                document.getElementById('hero-sub').textContent = 'Desenvolvedor de aplicativos e sites.';
+                document.getElementById('hero-sub').textContent = 'Desenvolvedor de aplicativos, sites, automação e análise de dados para soluções eficientes.';
 
                 document.getElementById('about-title').textContent = 'Sobre';
-                document.getElementById('about-desc').textContent = 'Desenvolvedor de aplicativos, sites, automação e análise de dados para soluções eficientes.';
+                document.getElementById('about-desc').textContent = 'Sou um desenvolvedor apaixonado por aplicativos, sites, automação e análise de dados.';
 
                 document.getElementById('skills-title').textContent = 'Habilidades';
                 document.getElementById('exp-title').textContent = 'Experiência';
@@ -343,6 +353,7 @@
                 document.getElementById('proj1-desc').textContent = 'App de agendamento para salão de beleza com Firebase e Kotlin.';
                 document.getElementById('proj2-desc').textContent = 'App Android para aprender coreano com TTS e reconhecimento de voz.';
                 document.getElementById('proj3-desc').textContent = 'Bot de trading automatizado usando API da Binance.';
+                document.getElementById('proj4-desc').textContent = 'Sistema de automação de pedidos e cozinha para restaurante Seoul Chicken.';
 
                 document.getElementById('contact-title').textContent = 'Contato';
                 document.getElementById('contact-desc').textContent = 'Vamos nos conectar!';
