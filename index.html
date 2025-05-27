@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alex (Haseung Song) Portfolio</title>
 
+    <!-- 폰트 추가 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --bg-color: #fff;
@@ -20,16 +23,17 @@
         body {
             background: var(--bg-color);
             color: var(--text-color);
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            padding-top: 60px; /* header 높이만큼 띄움 */
+            padding-top: 60px;
             scroll-behavior: smooth;
         }
 
         a {
             color: var(--accent);
             text-decoration: none;
+            transition: 0.3s;
         }
 
         a:hover {
@@ -40,19 +44,21 @@
             display: flex;
             align-items: center;
             padding: 12px 16px;
-            background: var(--card-bg);
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
             position: fixed;
             width: 100%;
             top: 0;
             left: 0;
             z-index: 1000;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .logo {
             font-weight: bold;
             font-size: clamp(14px, 2vw, 18px);
-            flex: 0 0 33.33%; /* 왼쪽 1/3 고정 */
+            flex: 0 0 33.33%;
         }
 
         .nav {
@@ -61,7 +67,7 @@
             flex-wrap: nowrap;
             justify-content: flex-start;
             align-items: center;
-            flex: 0 0 66.66%; /* 오른쪽 2/3 고정 */
+            flex: 0 0 66.66%;
             overflow: hidden;
         }
 
@@ -70,7 +76,7 @@
             padding: 6px 10px;
             border-radius: 8px;
             transition: 0.3s;
-            font-size: clamp(12px, 1.4vw, 16px); /* 폰트 크기 유동적으로 조정 */
+            font-size: clamp(12px, 1.4vw, 16px);
         }
 
         .nav a:hover {
@@ -78,14 +84,15 @@
             color: var(--bg-color);
         }
 
-        .lang-toggle, .theme-toggle {
+        .lang-toggle {
             cursor: pointer;
             font-size: 20px;
         }
 
         .hero {
             text-align: center;
-            padding: 40px 20px 20px;
+            padding: 60px 20px 20px;
+            animation: fadeIn 1s ease forwards;
         }
 
         .profile-img {
@@ -116,37 +123,24 @@
 
         .social a {
             border: 1px solid var(--accent);
-            padding: 6px 12px;
-            border-radius: 20px;
-            transition: 0.3s;
+            padding: 6px 14px;
+            border-radius: 30px;
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
         }
 
         .social a:hover {
             background: var(--accent);
             color: var(--bg-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
-        section {
-            padding: 24px 20px;
-        }
-
-        section h2 {
-            margin-top: 0;
-            border-bottom: 2px solid var(--accent);
-            display: inline-block;
-            padding-bottom: 4px;
-        }
-
-        .skills, .experience {
-            list-style: none;
-            padding: 0;
-        }
-
-        .skills li, .experience li {
-            background: var(--card-bg);
-            margin: 6px 0;
-            padding: 8px 12px;
-            border-radius: 8px;
+        /* 애니메이션 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
@@ -176,9 +170,11 @@
         </div>
     </section>
 
-    <section id="about" class="about">
+        <section id="about" class="about">
         <h2 id="about-title">Sobre</h2>
-        <p id="about-desc">Sou um desenvolvedor apaixonado por aplicativos, sites, automação e análise de dados.</p>
+        <p id="about-desc">
+            Sou um desenvolvedor apaixonado por aplicativos, sites, automação e análise de dados.
+        </p>
 
         <h3 id="skills-title">Habilidades</h3>
         <ul class="skills">
@@ -198,7 +194,7 @@
         </ul>
     </section>
 
-        <section id="projects" class="projects">
+    <section id="projects" class="projects">
         <h2 id="projects-title">Projetos</h2>
 
         <div class="project-card">
@@ -257,7 +253,7 @@
         </div>
     </section>
 
-        <section id="contact" class="contact">
+    <section id="contact" class="contact">
         <h2 id="contact-title">Contato</h2>
         <p id="contact-desc">
             Ofereço soluções otimizadas para diversos tipos de projetos. Fique à vontade para entrar em contato sempre que precisar!
@@ -267,67 +263,130 @@
     <footer class="footer">
         © 2025 Alex (Haseung Song). All Rights Reserved.
     </footer>
+<style>
+    section {
+        padding: 24px 20px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn 0.8s forwards;
+    }
 
-    <script>
+    section h2 {
+        margin-top: 0;
+        font-size: 24px;
+        background: linear-gradient(90deg, var(--accent), #7ec8f0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        position: relative;
+    }
 
-        const langToggle = document.getElementById('langToggle');
-        let currentLang = 'pt';
+    section h2::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 3px;
+        background: var(--accent);
+        margin-top: 6px;
+        border-radius: 2px;
+    }
 
-        langToggle.addEventListener('click', () => {
-            if (currentLang === 'pt') {
-                document.querySelector('.menu-home').textContent = '홈';
-                document.querySelector('.menu-about').textContent = '소개';
-                document.querySelector('.menu-projects').textContent = '프로젝트';
-                document.querySelector('.menu-contact').textContent = '연락처';
-                langToggle.textContent = '🇧🇷';
+    .project-card {
+        background: var(--card-bg);
+        padding: 20px;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-                document.getElementById('hero-title').textContent = '안녕하세요, Alex (Haseung Song)입니다.';
-                document.getElementById('hero-sub').textContent = '앱, 웹, 자동화 및 데이터 분석을 개발하는 개발자입니다.';
+    .project-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
 
-                document.getElementById('about-title').textContent = '소개';
-                document.getElementById('about-desc').textContent = '저는 앱, 웹사이트, 자동화 및 데이터 분석을 통해 효율적인 솔루션을 개발합니다.';
+    .skills li, .experience li {
+        background: var(--card-bg);
+        margin: 6px 0;
+        padding: 8px 12px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
 
-                document.getElementById('skills-title').textContent = '기술';
-                document.getElementById('exp-title').textContent = '경력';
+    .footer {
+        text-align: center;
+        padding: 16px;
+        background: var(--card-bg);
+        font-size: 14px;
+        border-top: 1px solid rgba(0,0,0,0.05);
+    }
 
-                document.getElementById('projects-title').textContent = '프로젝트';
-                document.getElementById('proj1-desc').textContent = 'Firebase와 Kotlin으로 만든 미용실 예약 앱.';
-                document.getElementById('proj2-desc').textContent = 'TTS와 음성 인식이 포함된 한국어 학습 앱.';
-                document.getElementById('proj3-desc').textContent = 'Binance API를 이용한 자동 매매 봇.';
-                document.getElementById('proj4-desc').textContent = '서울치킨 메뉴 및 주방 자동화 시스템.';
-                document.getElementById('proj5-desc').textContent = 'KOTRA 대상 수상 프로젝트. 브라질 수입 데이터를 NCM 코드 기준으로 한 페이지에서 체계적으로 분석 가능.';
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
 
-                document.getElementById('contact-title').textContent = '연락처';
-                document.getElementById('contact-desc').textContent = '다양한 프로젝트에 대한 최적화 솔루션을 제공합니다. 언제든지 편하게 연락 주세요!';
-                currentLang = 'kr';
-            } else {
-                document.querySelector('.menu-home').textContent = 'Início';
-                document.querySelector('.menu-about').textContent = 'Sobre';
-                document.querySelector('.menu-projects').textContent = 'Projetos';
-                document.querySelector('.menu-contact').textContent = 'Contato';
-                langToggle.textContent = '🇰🇷';
+<script>
+    const langToggle = document.getElementById('langToggle');
+    let currentLang = 'pt';
 
-                document.getElementById('hero-title').textContent = 'Olá, sou Alex (Haseung Song)';
-                document.getElementById('hero-sub').textContent = 'Desenvolvedor de aplicativos, sites, automação e análise de dados para soluções eficientes.';
+    langToggle.addEventListener('click', () => {
+        if (currentLang === 'pt') {
+            document.querySelector('.menu-home').textContent = '홈';
+            document.querySelector('.menu-about').textContent = '소개';
+            document.querySelector('.menu-projects').textContent = '프로젝트';
+            document.querySelector('.menu-contact').textContent = '연락처';
+            langToggle.textContent = '🇧🇷';
 
-                document.getElementById('about-title').textContent = 'Sobre';
-                document.getElementById('about-desc').textContent = 'Sou um desenvolvedor apaixonado por aplicativos, sites, automação e análise de dados.';
+            document.getElementById('hero-title').textContent = '안녕하세요, Alex (Haseung Song)입니다.';
+            document.getElementById('hero-sub').textContent = '앱, 웹, 자동화 및 데이터 분석을 개발하는 개발자입니다.';
 
-                document.getElementById('skills-title').textContent = 'Habilidades';
-                document.getElementById('exp-title').textContent = 'Experiência';
+            document.getElementById('about-title').textContent = '소개';
+            document.getElementById('about-desc').textContent = '저는 앱, 웹사이트, 자동화 및 데이터 분석을 통해 효율적인 솔루션을 개발합니다.';
 
-                document.getElementById('projects-title').textContent = 'Projetos';
-                document.getElementById('proj1-desc').textContent = 'App de agendamento para salão de beleza com Firebase e Kotlin.';
-                document.getElementById('proj2-desc').textContent = 'App Android para aprender coreano com TTS e reconhecimento de voz.';
-                document.getElementById('proj3-desc').textContent = 'Bot de trading automatizado usando API da Binance.';
-                document.getElementById('proj4-desc').textContent = 'Sistema de automação de pedidos e cozinha para restaurante Seoul Chicken.';
-                document.getElementById('proj5-desc').textContent = 'Projeto premiado no KOTRA. Dashboard para análise dos dados de importação acumulada do Brasil baseado no código NCM.';
+            document.getElementById('skills-title').textContent = '기술';
+            document.getElementById('exp-title').textContent = '경력';
 
-                document.getElementById('contact-title').textContent = 'Contato';
-                document.getElementById('contact-desc').textContent = 'Ofereço soluções otimizadas para diversos tipos de projetos. Fique à vontade para entrar em contato sempre que precisar!';
-                currentLang = 'pt';
-            }
-        });
-    </script>
+            document.getElementById('projects-title').textContent = '프로젝트';
+            document.getElementById('proj1-desc').textContent = 'Firebase와 Kotlin으로 만든 미용실 예약 앱.';
+            document.getElementById('proj2-desc').textContent = 'TTS와 음성 인식이 포함된 한국어 학습 앱.';
+            document.getElementById('proj3-desc').textContent = 'Binance API를 이용한 자동 매매 봇.';
+            document.getElementById('proj4-desc').textContent = '서울치킨 메뉴 및 주방 자동화 시스템.';
+            document.getElementById('proj5-desc').textContent = 'KOTRA 대상 수상 프로젝트. 브라질 수입 데이터를 NCM 코드 기준으로 한 페이지에서 체계적으로 분석 가능.';
+
+            document.getElementById('contact-title').textContent = '연락처';
+            document.getElementById('contact-desc').textContent = '다양한 프로젝트에 대한 최적화 솔루션을 제공합니다. 언제든지 편하게 연락 주세요!';
+            currentLang = 'kr';
+        } else {
+            document.querySelector('.menu-home').textContent = 'Início';
+            document.querySelector('.menu-about').textContent = 'Sobre';
+            document.querySelector('.menu-projects').textContent = 'Projetos';
+            document.querySelector('.menu-contact').textContent = 'Contato';
+            langToggle.textContent = '🇰🇷';
+
+            document.getElementById('hero-title').textContent = 'Olá, sou Alex (Haseung Song)';
+            document.getElementById('hero-sub').textContent = 'Desenvolvedor de aplicativos, sites, automação e análise de dados para soluções eficientes.';
+
+            document.getElementById('about-title').textContent = 'Sobre';
+            document.getElementById('about-desc').textContent = 'Sou um desenvolvedor apaixonado por aplicativos, sites, automação e análise de dados.';
+
+            document.getElementById('skills-title').textContent = 'Habilidades';
+            document.getElementById('exp-title').textContent = 'Experiência';
+
+            document.getElementById('projects-title').textContent = 'Projetos';
+            document.getElementById('proj1-desc').textContent = 'App de agendamento para salão de beleza com Firebase e Kotlin.';
+            document.getElementById('proj2-desc').textContent = 'App Android para aprender coreano com TTS e reconhecimento de voz.';
+            document.getElementById('proj3-desc').textContent = 'Bot de trading automatizado usando API da Binance.';
+            document.getElementById('proj4-desc').textContent = 'Sistema de automação de pedidos e cozinha para restaurante Seoul Chicken.';
+            document.getElementById('proj5-desc').textContent = 'Projeto premiado no KOTRA. Dashboard para análise dos dados de importação acumulada do Brasil baseado no código NCM.';
+
+            document.getElementById('contact-title').textContent = 'Contato';
+            document.getElementById('contact-desc').textContent = 'Ofereço soluções otimizadas para diversos tipos de projetos. Fique à vontade para entrar em contato sempre que precisar!';
+            currentLang = 'pt';
+        }
+    });
+</script>
+
 </body>
 </html>
