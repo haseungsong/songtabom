@@ -30,6 +30,7 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
+            padding-top: 60px; /* header 높이만큼 띄움 */
             scroll-behavior: smooth;
         }
 
@@ -48,25 +49,28 @@
             align-items: center;
             padding: 12px 16px;
             background: var(--card-bg);
-            position: sticky;
+            position: fixed;
+            width: 100%;
             top: 0;
-            z-index: 10;
+            left: 0;
+            z-index: 1000;
             flex-wrap: wrap;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
         }
 
         .logo {
             font-weight: bold;
-            font-size: 18px;
+            font-size: clamp(14px, 2vw, 18px);
         }
 
         .nav {
             display: flex;
-            gap: clamp(8px, 2vw, 16px);
+            gap: clamp(4px, 1.5vw, 14px); /* 간격 더 타이트하게 */
             flex-wrap: nowrap;
             justify-content: center;
             align-items: center;
             flex: 1;
-            overflow-x: auto;
+            overflow: hidden; /* 스크롤 아예 금지 */
         }
 
         .nav a {
@@ -74,6 +78,7 @@
             padding: 6px 10px;
             border-radius: 8px;
             transition: 0.3s;
+            font-size: clamp(12px, 1.4vw, 16px); /* 폰트 크기 유동적으로 조정 */
         }
 
         .nav a:hover {
@@ -176,6 +181,7 @@
         <div class="social">
             <a href="https://github.com/haseungsong" target="_blank">GitHub</a>
             <a href="mailto:haseungbr@gmail.com">Email</a>
+            <a href="https://wa.me/5511981451081" target="_blank">WhatsApp</a>
         </div>
     </section>
 
@@ -265,10 +271,6 @@
         <p id="contact-desc">
             Ofereço soluções otimizadas para diversos tipos de projetos. Fique à vontade para entrar em contato sempre que precisar!
         </p>
-        <div class="social">
-            <a href="https://github.com/haseungsong" target="_blank">GitHub</a>
-            <a href="mailto:haseungbr@gmail.com">Email</a>
-        </div>
     </section>
 
     <footer class="footer">
