@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex (Haseung Song) Portfolio</title>
+
+    <style>
+        :root {
+            --bg-color: #fff;
+            --text-color: #111;
+            --card-bg: #f9f9f9;
+            --accent: #4fc3f7;
+        }
+
+        body.dark {
+            --bg-color: #111;
+            --text-color: #eee;
+            --card-bg: #1e1e1e;
+            --accent: #80d8ff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            background: var(--card-bg);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav a {
+            padding: 6px 10px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .nav a:hover {
+            background: var(--accent);
+            color: var(--bg-color);
+        }
+
+        .lang-toggle {
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .theme-toggle {
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 40px 20px 20px;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 16px;
+            object-fit: cover;
+            border: 2px solid var(--accent);
+        }
+
+        .hero h1 {
+            margin: 0;
+        }
+
+        .roles {
+            font-size: 14px;
+            color: var(--accent);
+        }
+
+        .social {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .social a {
+            border: 1px solid var(--accent);
+            padding: 6px 12px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .social a:hover {
+            background: var(--accent);
+            color: var(--bg-color);
+        }
+
+        section {
+            padding: 24px 20px;
+        }
+
+        section h2 {
+            margin-top: 0;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+            padding-bottom: 4px;
+        }
+
+        .skills, .experience {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills li, .experience li {
+            background: var(--card-bg);
+            margin: 6px 0;
+            padding: 8px 12px;
+            border-radius: 8px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+        }
+
+        .links {
+            margin-top: 8px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .links a {
+            border: 1px solid var(--accent);
+            padding: 6px 12px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .links a:hover {
+            background: var(--accent);
+            color: var(--bg-color);
+        }
+
+        .contact p {
+            margin-bottom: 12px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 16px;
+            background: var(--card-bg);
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">Alex (Haseung Song)</div>
+        <nav class="nav">
+            <a href="#home" class="menu-home">Início</a>
+            <a href="#about" class="menu-about">Sobre</a>
+            <a href="#projects" class="menu-projects">Projetos</a>
+            <a href="#contact" class="menu-contact">Contato</a>
+            <div class="lang-toggle" id="langToggle">🇰🇷</div>
+            <div class="theme-toggle" id="themeToggle">🌙</div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <img src="profile.jpg" alt="Profile" class="profile-img">
+        <h1 id="hero-title">Olá, sou Alex (Haseung Song)</h1>
+        <p id="hero-sub">Desenvolvedor de aplicativos e sites.</p>
+        <p class="roles">App Developer | Web Developer | Automation | Data</p>
+        <div class="social">
+            <a href="#" target="_blank">GitHub</a>
+            <a href="#" target="_blank">LinkedIn</a>
+            <a href="mailto:your.email@example.com">Email</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2 id="about-title">Sobre</h2>
+        <p id="about-desc">Sou um desenvolvedor apaixonado por aplicativos, sites e automação de dados.</p>
+
+        <h3 id="skills-title">Habilidades</h3>
+        <ul class="skills">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Kotlin</li>
+            <li>Python</li>
+            <li>Firebase</li>
+        </ul>
+
+        <h3 id="exp-title">Experiência</h3>
+        <ul class="experience">
+            <li>2023 - Atual: KOTRA Project Manager</li>
+            <li>2020 - 2023: Hyundai Motors FP&A</li>
+            <li>2015 - 2020: Engenheiro de Processos</li>
+        </ul>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2 id="projects-title">Projetos</h2>
+
+        <div class="project-card">
+            <h3>Hair Salon Reservation App</h3>
+            <p id="proj1-desc">App de agendamento para salão de beleza com Firebase e Kotlin.</p>
+            <div class="links">
+                <a href="#">GitHub</a>
+                <a href="#">Demo</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>K-Dari</h3>
+            <p id="proj2-desc">App Android para aprender coreano com TTS e reconhecimento de voz.</p>
+            <div class="links">
+                <a href="#">GitHub</a>
+                <a href="#">Demo</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>Auto Trading Bot</h3>
+            <p id="proj3-desc">Bot de trading automatizado usando API da Binance.</p>
+            <div class="links">
+                <a href="#">GitHub</a>
+                <a href="#">Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 id="contact-title">Contato</h2>
+        <p id="contact-desc">Vamos nos conectar!</p>
+        <div class="social">
+            <a href="#" target="_blank">GitHub</a>
+            <a href="#" target="_blank">LinkedIn</a>
+            <a href="mailto:your.email@example.com">Email</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        © 2025 Alex (Haseung Song). All Rights Reserved.
+    </footer>
+
+    <script>
+        const toggle = document.getElementById('themeToggle');
+        toggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            toggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+        });
+
+        const langToggle = document.getElementById('langToggle');
+        let currentLang = 'pt';
+
+        langToggle.addEventListener('click', () => {
+            if (currentLang === 'pt') {
+                document.querySelector('.menu-home').textContent = '홈';
+                document.querySelector('.menu-about').textContent = '소개';
+                document.querySelector('.menu-projects').textContent = '프로젝트';
+                document.querySelector('.menu-contact').textContent = '연락처';
+                langToggle.textContent = '🇧🇷';
+
+                document.getElementById('hero-title').textContent = '안녕하세요, Alex (Haseung Song)입니다.';
+                document.getElementById('hero-sub').textContent = '앱과 웹을 만드는 개발자입니다.';
+
+                document.getElementById('about-title').textContent = '소개';
+                document.getElementById('about-desc').textContent = '저는 앱 개발, 웹사이트 개발, 데이터 자동화에 열정을 가진 개발자입니다.';
+
+                document.getElementById('skills-title').textContent = '기술';
+                document.getElementById('exp-title').textContent = '경력';
+
+                document.getElementById('projects-title').textContent = '프로젝트';
+                document.getElementById('proj1-desc').textContent = 'Firebase와 Kotlin으로 만든 미용실 예약 앱.';
+                document.getElementById('proj2-desc').textContent = 'TTS와 음성 인식이 포함된 한국어 학습 앱.';
+                document.getElementById('proj3-desc').textContent = 'Binance API를 이용한 자동 매매 봇.';
+
+                document.getElementById('contact-title').textContent = '연락처';
+                document.getElementById('contact-desc').textContent = '연락 주세요!';
+                currentLang = 'kr';
+            } else {
+                document.querySelector('.menu-home').textContent = 'Início';
+                document.querySelector('.menu-about').textContent = 'Sobre';
+                document.querySelector('.menu-projects').textContent = 'Projetos';
+                document.querySelector('.menu-contact').textContent = 'Contato';
+                langToggle.textContent = '🇰🇷';
+
+                document.getElementById('hero-title').textContent = 'Olá, sou Alex (Haseung Song)';
+                document.getElementById('hero-sub').textContent = 'Desenvolvedor de aplicativos e sites.';
+
+                document.getElementById('about-title').textContent = 'Sobre';
+                document.getElementById('about-desc').textContent = 'Sou um desenvolvedor apaixonado por aplicativos, sites e automação de dados.';
+
+                document.getElementById('skills-title').textContent = 'Habilidades';
+                document.getElementById('exp-title').textContent = 'Experiência';
+
+                document.getElementById('projects-title').textContent = 'Projetos';
+                document.getElementById('proj1-desc').textContent = 'App de agendamento para salão de beleza com Firebase e Kotlin.';
+                document.getElementById('proj2-desc').textContent = 'App Android para aprender coreano com TTS e reconhecimento de voz.';
+                document.getElementById('proj3-desc').textContent = 'Bot de trading automatizado usando API da Binance.';
+
+                document.getElementById('contact-title').textContent = 'Contato';
+                document.getElementById('contact-desc').textContent = 'Vamos nos conectar!';
+                currentLang = 'pt';
+            }
+        });
+    </script>
+</body>
+</html>
