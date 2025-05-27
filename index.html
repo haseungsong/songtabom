@@ -43,6 +43,7 @@
         .header {
             display: flex;
             align-items: center;
+            justify-content: space-between;
             padding: 12px 16px;
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(10px);
@@ -58,7 +59,6 @@
         .logo {
             font-weight: bold;
             font-size: clamp(14px, 2vw, 18px);
-            flex: 0 0 33.33%;
         }
 
         .nav {
@@ -67,8 +67,16 @@
             flex-wrap: nowrap;
             justify-content: flex-start;
             align-items: center;
-            flex: 0 0 66.66%;
+            flex-grow: 1;
+            margin-left: 20px;
             overflow: hidden;
+        }
+
+        .lang-toggle {
+            cursor: pointer;
+            font-size: 20px;
+            margin-left: 8px;
+            flex-shrink: 0;
         }
 
         .nav a {
@@ -82,11 +90,6 @@
         .nav a:hover {
             background: var(--accent);
             color: var(--bg-color);
-        }
-
-        .lang-toggle {
-            cursor: pointer;
-            font-size: 20px;
         }
 
         .hero {
@@ -148,14 +151,17 @@
 <body>
 
     <header class="header">
-        <div class="logo">Alex (Haseung Song)</div>
+        <div class="logo">
+            Alex (송하승)<br>
+            Haseung Song
+        </div>
         <nav class="nav">
             <a href="#home" class="menu-home">Início</a>
             <a href="#about" class="menu-about">Sobre</a>
             <a href="#projects" class="menu-projects">Projetos</a>
             <a href="#contact" class="menu-contact">Contato</a>
-            <div class="lang-toggle" id="langToggle">🇰🇷</div>
         </nav>
+        <div class="lang-toggle" id="langToggle">🇰🇷</div>
     </header>
 
     <section id="home" class="hero">
